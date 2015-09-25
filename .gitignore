@@ -2,5 +2,5 @@ tmp
 .librarian
 .kitchen/
 .kitchen.local.yml
-*.lock
+Gemfile.lock
 berks-cookbooks/
