@@ -24,7 +24,7 @@ if node['artifact-deployer']['install_awscli']
   begin
     aws_credentials = data_bag_item(credentials_databag,credentials_databag_item)
     aws_config = "[default]
-aws_region=#{aws_region}
+region=#{aws_region}
 aws_access_key_id=#{aws_credentials['aws_access_key_id']}
 aws_secret_access_key=#{aws_credentials['aws_secret_access_key']}"
 

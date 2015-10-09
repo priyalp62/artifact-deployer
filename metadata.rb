@@ -21,11 +21,11 @@ depends "file"
 # depends "resolver", "~> 1.2.0"
 # depends "java", "~> 1.31.0"
 
-depends "python"
-depends 'apt'
-depends "ark"
-depends "resolver"
-depends "java"
+depends "python", ">= 1.4.6"
+depends 'apt', ">= 2.3.10"
+depends "ark", ">= 0.9.0"
+depends "resolver", ">= 1.2.0"
+depends "java", ">= 1.31.0"
 
 recipe 'artifacts', 'Installs artifacts'
 recipe 'awscli', 'Installs Python awscli util'
