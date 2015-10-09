@@ -14,6 +14,7 @@ default['artifact-deployer']['maven']['master_password'] = ""
 default['artifact-deployer']['maven']['purge_settings'] = false
 default['artifact-deployer']['maven']['timeout'] = 600
 
+default['artifact-deployer']['awscli']['aws_region'] = "us-east-1"
 default['artifact-deployer']['awscli']['credentials_databag'] = "awscli"
 default['artifact-deployer']['awscli']['credentials_databag_item'] = "credentials"
 default['artifact-deployer']['awscli']['credentials_parent_path'] = "/root/.aws"
