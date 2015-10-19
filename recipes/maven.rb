@@ -11,8 +11,12 @@ if node['artifact-deployer']['install_maven']
 
   if attribute_repos
     attribute_repos.each do |repo_id,repo|
-      repo['id'] = repo_id
-      maven_repos.push repo
+      mvnRepo = {}
+      mvnRepo['id'] = repo_id
+      repo.each do |param_name,param_value|
+        mvnRepo[param_name] = param_value
+      end
+      maven_repos.push mvnRepo
     end
   end
   begin
