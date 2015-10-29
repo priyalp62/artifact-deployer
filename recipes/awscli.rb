@@ -7,6 +7,10 @@ if node['artifact-deployer']['install_awscli']
   aws_config_file          = "#{credentials_parent_path}/credentials"
 
   if node['artifact-deployer']['force_awscli_commandline_install']
+    package 'python-pip'
+      action :install
+    end
+
     execute "install-awscli" do
       command "pip install awscli"
       not_if "pip list | grep awscli"
