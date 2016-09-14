@@ -38,7 +38,13 @@ end
 pathPrefix = node['artifactPathPrefix']
 
 unless node['artifacts'] == nil
-  node['artifacts'].each do |artifactName, artifact|
+  # Add default priority if it's missing
+  node['artifacts'].each do | artifactName, artifact |
+    unless artifact.has_key?('priority')
+      node['artifacts'][artifactName]['priority'] = 10
+    end
+  end
+  node['artifacts'].sort_by { |k, v| v[:priority] }.to_h.each do |artifactName, artifact|
     url             = artifact[:url]
     path            = artifact[:path] ? "#{pathPrefix}/#{artifact[:path]}" : nil
     artifact_id     = artifact[:artifactId]
