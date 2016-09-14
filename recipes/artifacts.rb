@@ -41,7 +41,7 @@ unless node['artifacts'] == nil
   # Add default priority if it's missing
   node['artifacts'].each do | artifactName, artifact |
     unless artifact.has_key?('priority')
-      node['artifacts'][artifactName]['priority'] = 10
+      node.default['artifacts'][artifactName]['priority'] = 10
     end
   end
   node['artifacts'].sort_by { |k, v| v[:priority] }.to_h.each do |artifactName, artifact|
